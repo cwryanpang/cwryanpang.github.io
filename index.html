@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Pang — Product Owner | Product Manager</title>
+<meta name="description" content="Ryan Pang — Product-minded professional in Toronto, moving from eCommerce Business Analyst into Product Management. Roadmaps, discovery, and data-driven decisions.">
+<!-- Social share preview — replace og:url and og:image with your real domain/image before publishing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ryan Pang — Product Owner | Product Manager">
+<meta property="og:description" content="Product-minded professional in Toronto, moving from eCommerce Business Analyst into Product Management. Roadmaps, discovery, and data-driven decisions.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ryan Pang — Product Owner | Product Manager">
+<meta name="twitter:description" content="Product-minded professional in Toronto, moving from eCommerce Business Analyst into Product Management.">
+<meta name="twitter:image" content="og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* SBB base colors */
+    --white:#ffffff;
+    --milk:#f6f6f6;
+    --cloud:#e5e5e5;
+    --silver:#dcdcdc;
+    --storm:#a8a8a8;
+    --granite:#686868;
+    --anthracite:#5a5a5a;
+    --iron:#444444;
+    --charcoal:#212121;
+    --red:#eb0000;
+    --red-125:#c60018;
+    --green:#00973b;      /* SBB green — "boarding" */
+    --sign-blue:#2d327d;  /* SBB Blue — station signage */
+    --font:"SBB","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --ls-text:.03em;
+    --lh-text:1.75;
+    --lh-heading:1.4;
+    --shadow-3:0 2px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.06);
+    --shadow-5:0 4px 32px rgba(0,0,0,.10), 0 1px 8px rgba(0,0,0,.06);
+    --shadow-9:0 16px 128px rgba(0,0,0,.10), 0 4px 32px rgba(0,0,0,.08);
+    --radius:16px;
+    --maxw:1040px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--milk);
+    color:var(--charcoal);
+    font-family:var(--font);
+    font-size:16px;
+    letter-spacing:var(--ls-text);
+    line-height:var(--lh-text);
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--red);color:#fff}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--sign-blue);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:0;line-height:var(--lh-heading);font-weight:700}
+
+  /* ============ header ============ */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--white);
+    border-bottom:1px solid var(--cloud);
+  }
+  .topbar-inner{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;
+    height:64px;gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo-badge{
+    width:36px;height:36px;border-radius:9px;
+    flex-shrink:0;overflow:hidden;
+    box-shadow:var(--shadow-3);
+  }
+  .logo-badge svg{display:block;width:100%;height:100%}
+  .brand-name{font-size:16px;font-weight:700;letter-spacing:0}
+  .topbar-actions{display:flex;align-items:center;gap:18px;justify-self:end}
+  .top-nav{display:flex;gap:26px;align-items:center;justify-content:center}
+  .top-nav a{
+    font-size:14px;color:var(--granite);
+    padding:4px 0;border-bottom:2px solid transparent;
+    transition:color .3s,border-color .3s;
+  }
+  .top-nav a:hover{color:var(--charcoal);border-bottom-color:var(--red)}
+  .resume-btn{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:13.5px;font-weight:600;color:#fff;background:var(--red);
+    padding:8px 16px;border-radius:999px;flex-shrink:0;
+    transition:background .3s;
+  }
+  .resume-btn:hover{background:var(--red-125)}
+  .resume-btn .btn-icon{width:14px;height:14px}
+  .clock{display:flex;align-items:center;gap:9px}
+  .clock svg{display:block}
+  .clock-digital{
+    font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--granite);
+    letter-spacing:.06em;font-variant-numeric:tabular-nums;
+  }
+  @media(max-width:760px){.top-nav{display:none}}
+
+  /* ============ hero ============ */
+  header.hero{padding:72px 0 64px}
+  .station-sign{
+    background:var(--sign-blue);
+    border-radius:var(--radius);
+    padding:44px 48px 40px;
+    box-shadow:var(--shadow-9);
+  }
+  .sign-eyebrow{
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.72);margin-bottom:12px;font-weight:500;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem,7vw,4rem);
+    line-height:1.1;color:#fff;
+  }
+  .hero .zh-name{
+    font-size:clamp(1.3rem,3vw,1.75rem);color:rgba(255,255,255,.85);
+    font-weight:500;margin-top:4px;letter-spacing:.12em;
+  }
+  .sign-sub{
+    margin-top:18px;font-size:clamp(1rem,2.4vw,1.25rem);
+    color:rgba(255,255,255,.88);max-width:56ch;
+  }
+  .sign-meta{
+    margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 24px;
+    font-size:13.5px;color:rgba(255,255,255,.66);
+  }
+  .sign-meta span::before{content:"◆ ";color:var(--red);
+    text-shadow:0 0 1px rgba(255,255,255,.4)}
+
+  /* departure board — Lyne light timetable */
+  .board{
+    margin-top:24px;background:var(--white);
+    border-radius:var(--radius);
+    padding:10px 28px;
+    box-shadow:var(--shadow-3);
+  }
+  .board-head{
+    display:grid;grid-template-columns:1fr 96px;gap:14px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--storm);padding:14px 0 10px;border-bottom:1px solid var(--cloud);
+  }
+  .board-row{
+    display:grid;grid-template-columns:1fr 96px;gap:14px;
+    align-items:center;
+    padding:15px 0;border-bottom:1px solid var(--cloud);
+    color:var(--charcoal);
+    transition:background .3s;
+  }
+  .board-row:last-child{border-bottom:none}
+  .board-row:hover{background:var(--milk)}
+  .board-row .dest{font-weight:700;font-size:15.5px;letter-spacing:.02em}
+  .board-row .plat{
+    text-align:center;font-family:"IBM Plex Mono",monospace;
+    font-weight:600;font-size:15px;color:var(--red);
+  }
+  @media(max-width:640px){
+    .board-head{grid-template-columns:1fr 70px}
+    .board-row{grid-template-columns:1fr 70px}
+  }
+
+  /* impact highlights strip */
+  .impact-strip{
+    margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .impact-stat{
+    flex:1;min-width:150px;text-align:center;
+    background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);padding:20px 16px;
+  }
+  .impact-num{
+    font-family:"IBM Plex Mono",monospace;font-size:1.9rem;font-weight:700;
+    color:var(--red);line-height:1;
+  }
+  .impact-label{
+    margin-top:6px;font-size:12px;letter-spacing:.04em;color:var(--granite);
+  }
+
+  /* ============ side route nav ============ */
+  .route-nav{
+    position:fixed;right:28px;top:50%;transform:translateY(-50%);
+    z-index:15;display:flex;flex-direction:column;width:14px;align-items:center;
+  }
+  .route-nav::before{
+    content:"";position:absolute;left:50%;transform:translateX(-50%);
+    top:7px;bottom:7px;width:3px;border-radius:2px;
+    background:var(--silver);
+  }
+  .route-nav a{position:relative;display:block;width:14px;height:14px;margin:12px 0}
+  .route-nav .dot{
+    display:block;width:14px;height:14px;border-radius:50%;
+    background:var(--milk);border:3px solid var(--storm);
+    position:relative;z-index:1;
+    transition:border-color .3s,transform .3s;
+  }
+  .route-nav .lbl{
+    position:absolute;right:26px;top:50%;transform:translateY(-50%) translateX(6px);
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    color:var(--granite);opacity:0;white-space:nowrap;pointer-events:none;
+    transition:opacity .3s,transform .3s;
+  }
+  .route-nav a:hover .lbl{opacity:1;transform:translateY(-50%)}
+  .route-nav a.active .dot{border-color:var(--red);transform:scale(1.2)}
+  .route-nav a.active .lbl{opacity:1;transform:translateY(-50%);color:var(--charcoal)}
+  @media(max-width:1220px){.route-nav{display:none}}
+
+  /* ============ sections ============ */
+  section{padding:72px 0}
+  .stn-head{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+  .stn-num{
+    width:44px;height:44px;border-radius:10px;flex-shrink:0;
+    background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:20px;line-height:1;
+    box-shadow:var(--shadow-3);
+  }
+  .stn-head h2{font-size:clamp(1.75rem,4vw,2.4rem)}
+  .stn-tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--storm);display:block;
+  }
+  .sec-divider{border:none;height:1px;background:var(--cloud);margin:24px 0 40px}
+  .sec-intro{color:var(--granite);max-width:62ch}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:start}
+  .about-grid p{text-align:justify;text-justify:inter-word;hyphens:auto}
+  .about-grid p+p{margin-top:16px}
+  .facts{
+    background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);padding:28px;
+  }
+  .facts dt{
+    font-size:12px;letter-spacing:.12em;font-weight:600;
+    color:var(--red);text-transform:uppercase;margin-top:18px;
+  }
+  .facts dt:first-child{margin-top:0}
+  .facts dd{margin-top:2px;font-size:15px;color:var(--iron)}
+
+  /* experience: route line (alignment: line center = dot center = 15px) */
+  .route{position:relative;padding-left:48px}
+  .route::before{
+    content:"";position:absolute;left:13px;top:10px;bottom:10px;width:4px;
+    background:var(--charcoal);border-radius:2px;
+  }
+  .stop{position:relative;padding-bottom:48px}
+  .stop:last-child{padding-bottom:0}
+  .stop::before{
+    content:"";position:absolute;left:-42px;top:5px;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--white);border:4px solid var(--charcoal);
+  }
+  .stop.current::before{
+    border-color:var(--red);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(235,0,0,.30)}
+    50%{box-shadow:0 0 0 9px rgba(235,0,0,0)}
+  }
+  .stop-period{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.1em;
+    color:var(--granite);text-transform:uppercase;
+  }
+  .stop h3{font-size:1.35rem;margin-top:4px}
+  .stop .org{color:var(--iron);font-weight:600;font-size:1rem}
+  .stop ul{margin-top:12px;list-style:none}
+  .stop li{color:var(--granite);font-size:15px;padding-left:18px;position:relative;margin-top:8px}
+  .stop li::before{content:"—";position:absolute;left:0;color:var(--storm)}
+  .now-tag{
+    display:inline-block;margin-left:10px;vertical-align:3px;
+    background:var(--red);color:#fff;border-radius:999px;
+    font-size:10.5px;letter-spacing:.1em;font-weight:600;
+    padding:3px 10px;text-transform:uppercase;
+  }
+
+  /* skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .skill-card{
+    background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);padding:28px;
+    transition:box-shadow .3s,transform .3s;
+  }
+  .skill-card:hover{box-shadow:var(--shadow-5);transform:translateY(-3px)}
+  .skill-card h3{font-size:1.05rem;margin-bottom:14px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-size:13px;letter-spacing:.02em;
+    background:var(--milk);border:1px solid var(--cloud);color:var(--iron);
+    padding:5px 13px;border-radius:999px;
+  }
+
+  /* projects */
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .project-card{
+    background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);padding:28px;
+    transition:box-shadow .3s,transform .3s;
+  }
+  .project-card:hover{box-shadow:var(--shadow-5);transform:translateY(-3px)}
+  .project-card h3{font-size:1.1rem;margin-bottom:6px}
+  .project-card .proj-role{
+    font-size:13px;color:var(--granite);font-weight:600;margin-bottom:12px;
+  }
+  .project-card .proj-desc{color:var(--granite);font-size:14.5px;margin-bottom:16px}
+  .project-card .proj-link{font-size:13.5px;font-weight:600;color:var(--red)}
+  .placeholder-badge{
+    display:inline-block;background:var(--milk);
+    border:1px dashed var(--storm);color:var(--granite);
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 10px;border-radius:999px;margin-bottom:14px;
+  }
+
+  /* education + certs + languages */
+  .edu-list{display:grid;gap:18px}
+  .edu{
+    background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-3);
+    padding:28px;display:grid;grid-template-columns:110px 1fr;gap:26px;align-items:start;
+  }
+  .edu .year{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--granite);
+    letter-spacing:.08em;padding-top:5px;
+  }
+  .edu h3{font-size:1.15rem}
+  .edu .school{color:var(--iron);font-weight:600;margin-top:2px}
+  .edu p{color:var(--granite);font-size:15px;margin-top:10px}
+  h2.small{font-size:1.2rem;margin:52px 0 18px}
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cert{
+    background:var(--white);border-radius:12px;box-shadow:var(--shadow-3);
+    padding:20px 22px;
+  }
+  .cert b{font-size:14.5px;display:block;line-height:1.4}
+  .cert span{font-size:12.5px;color:var(--granite);margin-top:4px;display:block}
+  .langs{display:flex;flex-wrap:wrap;gap:14px}
+  .lang{
+    background:var(--white);border-radius:12px;box-shadow:var(--shadow-3);
+    padding:14px 20px;display:flex;flex-direction:column;gap:1px;min-width:150px;
+  }
+  .lang b{font-size:15px}
+  .lang span{font-size:12.5px;color:var(--granite)}
+
+  /* contact */
+  .terminus{
+    background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-5);
+    padding:52px 32px;text-align:center;
+  }
+  .terminus p{color:var(--granite);max-width:46ch;margin:0 auto 30px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    background:var(--red);color:#fff;
+    font-family:var(--font);font-weight:600;font-size:15.5px;letter-spacing:.01em;
+    padding:13px 32px;border-radius:999px;
+    transition:background .3s;
+  }
+  .btn:hover{background:var(--red-125)}
+  /* Lyne secondary button — spec from @sbb-esta/lyne-elements:
+     white bg · 2px cloud border · charcoal text · pill · elevation shadow
+     hover: text -> black · active: milk bg, anthracite text, shadow off */
+  .btn-secondary{
+    background:var(--white);color:var(--charcoal);
+    border:2px solid var(--cloud);padding:11px 30px;
+    box-shadow:var(--shadow-3);
+    transition:background .3s,color .3s,box-shadow .3s;
+  }
+  .btn-secondary:hover{background:var(--white);color:#000}
+  .btn-secondary:active{background:var(--milk);color:var(--anthracite);box-shadow:none}
+  .btn-icon{width:18px;height:18px;flex-shrink:0}
+  .btn-equal{min-width:196px}
+  .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .terminus .contact-line{
+    margin:20px auto 0;font-size:14.5px;color:var(--granite);max-width:none;
+  }
+  .contact-line a{color:var(--charcoal);font-weight:600}
+  .contact-line a:hover{color:var(--red)}
+
+  /* contact form */
+  .contact-form{
+    max-width:420px;margin:34px auto 0;display:flex;flex-direction:column;gap:12px;
+  }
+  .contact-form input,.contact-form textarea{
+    font-family:var(--font);font-size:14.5px;padding:12px 16px;
+    border-radius:10px;border:1px solid var(--cloud);
+    background:var(--milk);color:var(--charcoal);
+  }
+  .contact-form input:focus,.contact-form textarea:focus{
+    outline:2px solid var(--sign-blue);outline-offset:1px;
+  }
+  .contact-form textarea{min-height:110px;resize:vertical}
+  .contact-form button{align-self:center;margin-top:2px;border:none;cursor:pointer}
+  .contact-form button[disabled]{opacity:.6;cursor:not-allowed}
+  .contact-form input[aria-invalid="true"],
+  .contact-form textarea[aria-invalid="true"]{border-color:var(--red)}
+  .field-error{
+    display:block;font-size:12.5px;color:var(--red);margin-top:-6px;text-align:left;
+  }
+  .field-error:empty{display:none}
+  .form-status{
+    max-width:420px;margin:0 auto 14px;padding:12px 16px;
+    border-radius:10px;font-size:14px;text-align:center;
+  }
+  .form-status-success{
+    background:rgba(0,151,59,.08);color:var(--green);border:1px solid rgba(0,151,59,.25);
+  }
+  .form-status-error{
+    background:rgba(235,0,0,.06);color:var(--red);border:1px solid rgba(235,0,0,.25);
+  }
+  .form-divider{
+    display:flex;align-items:center;gap:12px;max-width:420px;margin:34px auto 0;
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--storm);
+  }
+  .form-divider::before,.form-divider::after{content:"";flex:1;height:1px;background:var(--cloud)}
+
+  footer{
+    background:var(--charcoal);color:var(--storm);
+    padding:32px 0;font-size:13px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--cloud);transition:color .3s}
+  footer a:hover{color:#fff}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .stop.current::before{animation:none}
+    .skill-card,.project-card,.btn,.top-nav a{transition:none}
+  }
+  @media(max-width:860px){
+    .about-grid{grid-template-columns:1fr}
+    .skills-grid{grid-template-columns:1fr 1fr}
+    .projects-grid{grid-template-columns:1fr 1fr}
+    .cert-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    header.hero{padding:44px 0 40px}
+    section{padding:54px 0}
+    .skills-grid{grid-template-columns:1fr}
+    .projects-grid{grid-template-columns:1fr}
+    .edu{grid-template-columns:1fr;gap:8px}
+    .station-sign{padding:30px 24px}
+    .terminus{padding:38px 20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- header -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <span class="logo-badge" role="img" aria-label="Ryan Pang logo">
+        <!-- SVG text-anchor + dominant-baseline keeps the R optically dead-centre -->
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="36" height="36" rx="9" fill="#eb0000"/>
+          <text x="18" y="18.5" text-anchor="middle" dominant-baseline="central"
+                fill="#ffffff" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif"
+                font-size="21" font-weight="700">R</text>
+        </svg>
+      </span>
+      <span class="brand-name">Ryan Pang</span>
+    </div>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="resume-btn" href="resume.pdf" download>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 2.5h8.5L19 7v14.5H6V2.5Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M14 2.5V7h5" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M9 12h6M9 15h6M9 18h3.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span>Résumé (PDF)</span>
+      </a>
+      <div class="clock" aria-hidden="true">
+        <svg id="stnClock" width="34" height="34" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48" fill="#fff" stroke="#dcdcdc" stroke-width="2.5"/>
+          <g id="ticks"></g>
+          <line id="hHand" x1="50" y1="50" x2="50" y2="26" stroke="#212121" stroke-width="7" stroke-linecap="butt"/>
+          <line id="mHand" x1="50" y1="50" x2="50" y2="14" stroke="#212121" stroke-width="5" stroke-linecap="butt"/>
+          <g id="sHand">
+            <line x1="50" y1="58" x2="50" y2="20" stroke="#eb0000" stroke-width="2.6"/>
+            <circle cx="50" cy="20" r="5" fill="#eb0000"/>
+          </g>
+          <circle cx="50" cy="50" r="3.4" fill="#212121"/>
+        </svg>
+        <span class="clock-digital" id="clockDigital">--:--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- side route nav -->
+<nav class="route-nav" aria-label="Section navigation">
+  <a href="#about"><span class="lbl">About</span><span class="dot"></span></a>
+  <a href="#experience"><span class="lbl">Experience</span><span class="dot"></span></a>
+  <a href="#skills"><span class="lbl">Skills</span><span class="dot"></span></a>
+  <a href="#projects"><span class="lbl">Projects</span><span class="dot"></span></a>
+  <a href="#education"><span class="lbl">Education</span><span class="dot"></span></a>
+  <a href="#contact"><span class="lbl">Contact</span><span class="dot"></span></a>
+</nav>
+
+<!-- hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="station-sign">
+      <p class="sign-eyebrow">Now arriving · Toronto, Canada</p>
+      <h1>Ryan Pang</h1>
+      <p class="zh-name" lang="zh-Hant">彭正為</p>
+      <p class="sign-sub">Product-minded Business Analyst — turning user problems and data into roadmaps that ship.</p>
+      <div class="sign-meta">
+        <span>Roadmapping · Prioritization · Discovery</span>
+        <span>eCommerce analytics · GA4 · Tableau</span>
+        <span>Professional Scrum Master I</span>
+      </div>
+    </div>
+
+    <div class="impact-strip reveal" aria-label="Highlights">
+      <div class="impact-stat">
+        <div class="impact-num">4+</div>
+        <div class="impact-label">Years in eCommerce, BA &amp; product-adjacent roles</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">10+</div>
+        <div class="impact-label">Enhancement requests led end-to-end (Jira)</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">2M+</div>
+        <div class="impact-label">Users on loyalty app analyzed</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">3.79</div>
+        <div class="impact-label">GPA — Dean's Honour List, every term</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">3</div>
+        <div class="impact-label">Professional certifications — PSM I · GA · Power Platform</div>
+      </div>
+    </div>
+
+    <div class="board" role="navigation" aria-label="Departures">
+      <div class="board-head"><span>Destination</span><span style="text-align:center">Station</span></div>
+      <a class="board-row" href="#about">
+        <span class="dest">About</span>
+        <span class="plat">1</span>
+      </a>
+      <a class="board-row" href="#experience">
+        <span class="dest">Experience</span>
+        <span class="plat">2</span>
+      </a>
+      <a class="board-row" href="#skills">
+        <span class="dest">Skills</span>
+        <span class="plat">3</span>
+      </a>
+      <a class="board-row" href="#projects">
+        <span class="dest">Projects</span>
+        <span class="plat">4</span>
+      </a>
+      <a class="board-row" href="#education">
+        <span class="dest">Education</span>
+        <span class="plat">5</span>
+      </a>
+      <a class="board-row" href="#contact">
+        <span class="dest">Contact</span>
+        <span class="plat">6</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- about -->
+<section id="about">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">1</span>
+      <div><span class="stn-tag">Station 1</span>
+      <h2>From Hong Kong to Toronto</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <div class="about-grid">
+      <div class="reveal">
+        <p>
+          Born and raised in Hong Kong, I started my career in digital services
+          at A.S. Watson Group, analyzing performance for a loyalty app with
+          over two million users. In 2022 I moved to Canada and rebuilt from the
+          ground up — taking frontline customer-operations work while doing
+          business analysis for an eCommerce consultancy, then completing a
+          postgraduate diploma in Business Analysis at George Brown
+          (Dean's Honour List, every term).
+        </p>
+        <p>
+          Today I'm the eCommerce Business Analyst at LG Electronics Canada,
+          owning site-wide performance analysis for LG.ca. The winding route
+          taught me something dashboards can't: how real users talk, where
+          processes actually break, and why the "obvious" metric is often the
+          wrong one. It's also the direction I'm building toward — from
+          analysis into product management and ownership.
+        </p>
+        <p>
+          Outside work, I'm usually studying German, or hunting for fossils on
+          Lake Ontario beaches.
+        </p>
+      </div>
+      <dl class="facts reveal">
+        <dt>Currently</dt>
+        <dd>eCommerce Business Analyst, LG Electronics Canada</dd>
+        <dt>Direction</dt>
+        <dd>Growing into Product Management / Product Ownership</dd>
+        <dt>Based in</dt>
+        <dd>Greater Toronto Area</dd>
+        <dt>Focus</dt>
+        <dd>Roadmapping · Discovery · Data-driven decisions</dd>
+        <dt>Certified</dt>
+        <dd>PSM I · Google Analytics · Power Platform</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- experience -->
+<section id="experience">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">2</span>
+      <div><span class="stn-tag">Station 2</span>
+      <h2>The route so far</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <div class="route">
+      <div class="stop current reveal">
+        <p class="stop-period">Sep 2025 — Present</p>
+        <h3>eCommerce Business Analyst<span class="now-tag">This stop</span></h3>
+        <p class="org">LG Electronics Canada · Toronto</p>
+        <ul>
+          <li>Oversee site-wide eCommerce performance analysis for LG.ca across all product divisions and digital initiatives.</li>
+          <li>Use GA4 and Tableau dashboards to identify traffic, conversion, and engagement trends, translating insights into actionable recommendations.</li>
+          <li>Manage enhancement requests through Jira, working with developers, headquarters, and cross-functional teams to drive delivery.</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <p class="stop-period">Aug 2023 — Dec 2024</p>
+        <h3>Business Analyst</h3>
+        <p class="org">MatMetrics · Toronto</p>
+        <ul>
+          <li>Tracked eCommerce KPIs — traffic, conversion, cart abandonment — in GA4 to support site performance optimization.</li>
+          <li>Customer behaviour analysis informed homepage and checkout redesigns that reduced bounce rate.</li>
+          <li>Maintained BRDs, wireframes, and timelines in Confluence and Visio; led refinement meetings and documented acceptance criteria.</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <p class="stop-period">May 2022 — Jan 2024</p>
+        <h3>Personal Response Assistant</h3>
+        <p class="org">Lifeline · Greater Toronto Area</p>
+        <ul>
+          <li>Handled 200+ daily calls on a personal emergency response service, where clarity and accuracy directly affect people's safety.</li>
+          <li>Assessed urgency and dispatched emergency services; the frontline understanding of users still informs my analysis work.</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <p class="stop-period">2020 — Mar 2022</p>
+        <h3>Digital Services Specialist — MoneyBack App</h3>
+        <p class="org">A.S. Watson Group · Hong Kong</p>
+        <ul>
+          <li>Analyzed eCommerce performance for a loyalty app with 2M+ users, guiding product improvements in redemption, conversion, and engagement.</li>
+          <li>Led QA planning and UAT execution; managed Agile timelines and documentation in Jira and Confluence.</li>
+          <li>Started as a full-stack marketing intern, running GA4 and heatmap-driven UX optimization for a Shopify pilot eStore.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- skills -->
+<section id="skills">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">3</span>
+      <div><span class="stn-tag">Station 3</span>
+      <h2>What I work with</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Product</h3>
+        <div class="tags">
+          <span class="tag">Roadmapping & prioritization</span>
+          <span class="tag">User stories & backlog grooming</span>
+          <span class="tag">A/B testing & experimentation</span>
+          <span class="tag">Product discovery & research</span>
+          <span class="tag">Competitor & baseline analysis</span>
+          <span class="tag">Impact analysis</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Analytics &amp; Data</h3>
+        <div class="tags">
+          <span class="tag">Google Analytics 4</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Business Analysis</h3>
+        <div class="tags">
+          <span class="tag">BRDs &amp; use cases</span>
+          <span class="tag">Process mapping (Visio)</span>
+          <span class="tag">UAT planning</span>
+          <span class="tag">Stakeholder management</span>
+          <span class="tag">Confluence</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Ways of Working</h3>
+        <div class="tags">
+          <span class="tag">Agile · Scrum (PSM I)</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Shopify CMS</span>
+          <span class="tag">Cross-team communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- projects -->
+<section id="projects">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">4</span>
+      <div><span class="stn-tag">Station 4</span>
+      <h2>Projects &amp; work</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <p class="sec-intro reveal">A couple of slots for real work to show up — swap these placeholders for actual case studies when ready.</p>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <span class="placeholder-badge">Add project</span>
+        <h3>Project title</h3>
+        <p class="proj-role">Your role · Company/Team · Year</p>
+        <p class="proj-desc">One or two sentences on the problem, what you did, and the measurable result (e.g. "+12% conversion", "cut cycle time by 30%").</p>
+        <!-- Point this at a case-study PDF (e.g. "case-study-1.pdf") or a separate detail page once written -->
+        <a class="proj-link" href="case-study-1.pdf">View case study →</a>
+      </div>
+      <div class="project-card reveal">
+        <span class="placeholder-badge">Add project</span>
+        <h3>Project title</h3>
+        <p class="proj-role">Your role · Company/Team · Year</p>
+        <p class="proj-desc">One or two sentences on the problem, what you did, and the measurable result.</p>
+        <a class="proj-link" href="case-study-2.pdf">View case study →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- education -->
+<section id="education">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">5</span>
+      <div><span class="stn-tag">Station 5</span>
+      <h2>Education &amp; certifications</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <div class="edu-list">
+      <div class="edu reveal">
+        <div class="year">2024–25</div>
+        <div>
+          <h3>Postgraduate Diploma, Business Analysis</h3>
+          <p class="school">George Brown Polytechnic · Toronto</p>
+          <p>GPA 3.79/4.0 — Dean's Honour List in every term. Capstone: redesigned the college's Work-Integrated Learning agreement process through stakeholder analysis, process mapping, and documentation.</p>
+        </div>
+      </div>
+      <div class="edu reveal">
+        <div class="year">2016–20</div>
+        <div>
+          <h3>BBA, Information Management</h3>
+          <p class="school">City University of Hong Kong</p>
+          <p>Information systems, business strategy, and data-driven decision-making. Exchange semester at the University of Lausanne (UNIL), Switzerland, 2019.</p>
+        </div>
+      </div>
+    </div>
+    <h2 class="small">Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert reveal"><b>Google Analytics Certification</b><span>Google Digital Academy · 2025</span></div>
+      <div class="cert reveal"><b>Microsoft Certified: Power Platform Fundamentals</b><span>Microsoft · 2024</span></div>
+      <div class="cert reveal"><b>Professional Scrum Master I (PSM I)</b><span>Scrum.org · 2022</span></div>
+    </div>
+    <h2 class="small">Awards</h2>
+    <div class="cert-grid">
+      <div class="cert reveal"><b>Top 10 Finalist — App Innovation Contest</b><span>City University of Hong Kong · 2018 — designed &amp; built "LOFO", an app prototype for finding lost objects</span></div>
+    </div>
+    <h2 class="small">Languages</h2>
+    <div class="langs">
+      <div class="lang reveal"><b>Cantonese</b><span>Native</span></div>
+      <div class="lang reveal"><b>English</b><span>Fluent</span></div>
+      <div class="lang reveal"><b>Mandarin</b><span>Fluent</span></div>
+      <div class="lang reveal"><b>German</b><span>Elementary (A2)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section id="contact">
+  <div class="wrap">
+    <div class="stn-head reveal">
+      <span class="stn-num">6</span>
+      <div><span class="stn-tag">Station 6 · Terminus</span>
+      <h2>End of the line. Let's talk.</h2></div>
+    </div>
+    <hr class="sec-divider">
+    <div class="terminus reveal">
+      <p>Open to conversations about product management, product ownership, and roles where data, discovery, and roadmaps meet decisions.</p>
+      <div class="btn-row">
+        <a class="btn btn-secondary btn-equal" href="https://www.linkedin.com/in/ryanpangcw/" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.28 2.36 4.28 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0Z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="btn btn-secondary btn-equal" href="resume.pdf" download>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 2.5h8.5L19 7v14.5H6V2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M14 2.5V7h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M9 12h6M9 15h6M9 18h3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Résumé (PDF)</span>
+        </a>
+      </div>
+
+      <p class="contact-line"><a href="mailto:cw.ryanpang@gmail.com">cw.ryanpang@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+14168778618">+1 416-877-8618</a></p>
+
+      <div class="form-divider">or send a message directly</div>
+
+      <div class="form-status form-status-success" data-fs-success>Thanks — your message is in, I'll reply soon.</div>
+      <div class="form-status form-status-error" data-fs-error>Something went wrong — please try again or email me directly.</div>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqggzan" method="POST">
+        <input type="text" name="name" id="cfName" placeholder="Name" data-fs-field required>
+        <span class="field-error" data-fs-error="name"></span>
+
+        <input type="email" name="email" id="cfEmail" placeholder="Email" data-fs-field required>
+        <span class="field-error" data-fs-error="email"></span>
+
+        <textarea name="message" id="cfMessage" placeholder="What would you like to talk about?" data-fs-field required></textarea>
+        <span class="field-error" data-fs-error="message"></span>
+
+        <button type="submit" class="btn" data-fs-submit-btn>Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ryan Pang · Service operates daily</span>
+    <span><a href="mailto:cw.ryanpang@gmail.com">cw.ryanpang@gmail.com</a> · <a href="tel:+14168778618">+1 416-877-8618</a></span>
+    <span>HKG → YYZ</span>
+  </div>
+</footer>
+
+<script>
+  /* ---- station clock ---- */
+  (function(){
+    const ticks = document.getElementById('ticks');
+    let t = '';
+    for (let i = 0; i < 60; i++){
+      const major = i % 5 === 0;
+      const len = major ? 12 : 4.5;
+      const w = major ? 3.4 : 1.4;
+      t += `<line x1="50" y1="5" x2="50" y2="${5+len}" stroke="#212121" stroke-width="${w}" transform="rotate(${i*6} 50 50)"/>`;
+    }
+    ticks.innerHTML = t;
+    const h = document.getElementById('hHand'),
+          m = document.getElementById('mHand'),
+          s = document.getElementById('sHand'),
+          dig = document.getElementById('clockDigital');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function tick(){
+      const now = new Date();
+      const sec = now.getSeconds() + now.getMilliseconds()/1000;
+      const min = now.getMinutes();
+      const hr = now.getHours() % 12;
+      const secAngle = Math.min(sec/58.5, 1) * 360;
+      h.setAttribute('transform', `rotate(${hr*30 + min*0.5} 50 50)`);
+      m.setAttribute('transform', `rotate(${min*6} 50 50)`);
+      s.setAttribute('transform', `rotate(${secAngle} 50 50)`);
+      dig.textContent = String(now.getHours()).padStart(2,'0') + ':' + String(min).padStart(2,'0');
+      if (!reduce) requestAnimationFrame(tick);
+    }
+    if (reduce){ tick(); setInterval(tick, 30000); }
+    else { requestAnimationFrame(tick); }
+  })();
+
+  /* ---- scroll reveal ---- */
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)){
+      els.forEach(el => el.classList.add('in')); return;
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(el => io.observe(el));
+  })();
+
+  /* ---- route nav scroll-spy ---- */
+  (function(){
+    const links = document.querySelectorAll('.route-nav a');
+    if (!('IntersectionObserver' in window)) return;
+    const secs = [...links].map(a => document.querySelector(a.getAttribute('href')));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          links.forEach(a => a.classList.toggle('active',
+            a.getAttribute('href') === '#' + e.target.id));
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    secs.forEach(s => s && io.observe(s));
+  })();
+</script>
+
+<!-- Formspree AJAX: submits the contact form without a page reload.
+     If JS fails to load, the form still works via its action/method attributes
+     (visitor gets redirected to a plain Formspree confirmation page). -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contactForm', formId: 'xpqggzan' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
