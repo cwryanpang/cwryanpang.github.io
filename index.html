@@ -268,10 +268,15 @@
   .sec-divider{border:none;height:1px;background:var(--cloud);margin:24px 0 40px}
   .sec-intro{color:var(--granite);max-width:62ch}
 
-  /* about */
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:start}
+  /* about — bento cards */
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start}
+  .about-main{display:flex;flex-direction:column;gap:20px}
   .about-grid p{text-align:justify;text-justify:inter-word;hyphens:auto}
   .about-grid p+p{margin-top:16px}
+  .story-card{
+    background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);padding:32px;
+  }
   .facts{
     background:var(--white);border-radius:var(--radius);
     box-shadow:var(--shadow-3);padding:28px;
@@ -283,17 +288,25 @@
   .facts dt:first-child{margin-top:0}
   .facts dd{margin-top:2px;font-size:15px;color:var(--iron)}
 
+  /* about right column: full-width photo card above the facts card */
+  .about-side{display:flex;flex-direction:column;gap:20px}
+  .headshot{
+    margin:0;background:var(--white);border-radius:var(--radius);
+    box-shadow:var(--shadow-3);overflow:hidden;
+  }
+  .headshot img{display:block;width:100%;height:auto}
+
   /* lines served — grayscale brand strip; swap wordmarks for <img> logos later */
   .lines-served{
-    margin-top:48px;padding-top:28px;border-top:1px solid var(--cloud);
-    display:flex;align-items:center;gap:16px 36px;flex-wrap:wrap;
+    padding:24px 28px;
+    background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-3);
   }
   .ls-label{
+    display:block;margin-bottom:16px;
     font-family:"IBM Plex Mono",monospace;font-size:11.5px;
     letter-spacing:.14em;text-transform:uppercase;color:var(--storm);
-    flex-shrink:0;
   }
-  .ls-items{display:flex;align-items:center;gap:14px 38px;flex-wrap:wrap}
+  .ls-items{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;justify-content:space-between}
   .ls-item{
     font-weight:700;font-size:19px;letter-spacing:-.01em;
     color:var(--storm);transition:color .3s;
@@ -663,7 +676,8 @@
     </div>
     <hr class="sec-divider">
     <div class="about-grid">
-      <div class="reveal">
+      <div class="about-main">
+      <div class="story-card reveal">
         <p>
           Born and raised in Hong Kong, I discovered my passion for digital
           experiences at A.S. Watson Group, managing performance and user
@@ -692,28 +706,36 @@
           world, camping and hunting for fossils on Lake Ontario beaches.
         </p>
       </div>
-      <dl class="facts reveal">
-        <dt>Currently</dt>
-        <dd>eCommerce Business Analyst, LG Electronics Canada</dd>
-        <dt>Direction</dt>
-        <dd>Product Management / Product Ownership</dd>
-        <dt>Based in</dt>
-        <dd>Toronto, Canada</dd>
-        <dt>Focus</dt>
-        <dd>Agile Delivery · Product Discovery · Data-Driven Strategy · UI/UX Design</dd>
-        <dt>Tools &amp; Certs</dt>
-        <dd>PSM I · GA4 &amp; Tableau · Jira &amp; Confluence · Figma</dd>
-      </dl>
-    </div>
-    <div class="lines-served reveal" aria-label="Organizations">
-      <span class="ls-label">Lines served</span>
-      <div class="ls-items">
-        <span class="ls-item"><img src="logos/lg.svg" alt="LG Electronics" style="height:24px"></span>
-        <span class="ls-item"><img src="logos/as-watson.png" alt="A.S. Watson Group" style="height:26px"></span>
-        <span class="ls-item"><img src="logos/moneyback.png" alt="MoneyBack" style="height:30px"></span>
-        <span class="ls-item"><img src="logos/george-brown.svg" alt="George Brown Polytechnic" style="height:32px"></span>
-        <span class="ls-item"><img src="logos/cityu.svg" alt="City University of Hong Kong" style="height:32px"></span>
-        <span class="ls-item"><img src="logos/unil.png" alt="University of Lausanne" style="height:22px"></span>
+      <div class="lines-served reveal" aria-label="Organizations">
+        <span class="ls-label">Lines served</span>
+        <div class="ls-items">
+          <span class="ls-item"><img src="logos/lg.svg" alt="LG Electronics" style="height:24px"></span>
+          <span class="ls-item"><img src="logos/as-watson.png" alt="A.S. Watson Group" style="height:26px"></span>
+          <span class="ls-item"><img src="logos/moneyback.png" alt="MoneyBack" style="height:30px"></span>
+          <span class="ls-item"><img src="logos/george-brown.svg" alt="George Brown Polytechnic" style="height:32px"></span>
+          <span class="ls-item"><img src="logos/cityu.svg" alt="City University of Hong Kong" style="height:32px"></span>
+          <span class="ls-item"><img src="logos/unil.png" alt="University of Lausanne" style="height:22px"></span>
+        </div>
+      </div>
+      </div>
+      <div class="about-side">
+        <figure class="headshot reveal">
+          <img src="headshot.jpg" alt="Ryan Pang" loading="lazy">
+        </figure>
+        <div class="facts reveal">
+        <dl>
+          <dt>Currently</dt>
+          <dd>eCommerce Business Analyst, LG Electronics Canada</dd>
+          <dt>Direction</dt>
+          <dd>Product Management / Product Ownership</dd>
+          <dt>Based in</dt>
+          <dd>Toronto, Canada</dd>
+          <dt>Focus</dt>
+          <dd>Agile Delivery · Product Discovery · Data-Driven Strategy · UI/UX Design</dd>
+          <dt>Tools &amp; Certs</dt>
+          <dd>PSM I · GA4 &amp; Tableau · Jira &amp; Confluence · Figma</dd>
+        </dl>
+        </div>
       </div>
     </div>
   </div>
