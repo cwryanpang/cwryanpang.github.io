@@ -269,8 +269,11 @@
   .sec-intro{color:var(--granite);max-width:62ch}
 
   /* about — bento cards */
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start}
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch}
   .about-main{display:flex;flex-direction:column;gap:20px}
+  /* flexible cards absorb the height difference so both columns end flush */
+  .about-main .story-card{flex:1}
+  .about-side .facts{flex:1}
   .about-grid p{text-align:justify;text-justify:inter-word;hyphens:auto}
   .about-grid p+p{margin-top:16px}
   .story-card{
