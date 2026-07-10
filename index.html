@@ -303,6 +303,17 @@
     font-size:10.5px;letter-spacing:.1em;font-weight:600;
     padding:3px 10px;text-transform:uppercase;
   }
+  /* education stops share the same line, marked in signage blue */
+  .study-tag{
+    display:inline-block;margin-left:10px;vertical-align:3px;
+    background:var(--sign-blue);color:#fff;border-radius:999px;
+    font-size:10.5px;letter-spacing:.1em;font-weight:600;
+    padding:3px 10px;text-transform:uppercase;
+  }
+  .stop.study::before{border-color:var(--sign-blue)}
+  /* interchange marker — diamond, like a transfer station on a metro map */
+  .stop.interchange::before{border-color:var(--red);border-radius:4px;transform:rotate(45deg)}
+  .stop.interchange h3{font-size:1.15rem}
 
   /* skills */
   .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -341,19 +352,7 @@
     padding:3px 10px;border-radius:999px;margin-bottom:14px;
   }
 
-  /* education + certs + languages */
-  .edu-list{display:grid;gap:18px}
-  .edu{
-    background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-3);
-    padding:28px;display:grid;grid-template-columns:110px 1fr;gap:26px;align-items:start;
-  }
-  .edu .year{
-    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--granite);
-    letter-spacing:.08em;padding-top:5px;
-  }
-  .edu h3{font-size:1.15rem}
-  .edu .school{color:var(--iron);font-weight:600;margin-top:2px}
-  .edu p{color:var(--granite);font-size:15px;margin-top:10px}
+  /* certs + languages */
   h2.small{font-size:1.2rem;margin:52px 0 18px}
   .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .cert{
@@ -487,7 +486,6 @@
     section{padding:54px 0}
     .skills-grid{grid-template-columns:1fr}
     .projects-grid{grid-template-columns:1fr}
-    .edu{grid-template-columns:1fr;gap:8px}
     .station-sign{padding:30px 24px}
     .terminus{padding:38px 20px}
   }
@@ -512,7 +510,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
+      <a href="#education">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="topbar-actions">
@@ -548,7 +546,7 @@
   <a href="#experience"><span class="lbl">Experience</span><span class="dot"></span></a>
   <a href="#skills"><span class="lbl">Skills</span><span class="dot"></span></a>
   <a href="#projects"><span class="lbl">Projects</span><span class="dot"></span></a>
-  <a href="#education"><span class="lbl">Education</span><span class="dot"></span></a>
+  <a href="#education"><span class="lbl">Credentials</span><span class="dot"></span></a>
   <a href="#contact"><span class="lbl">Contact</span><span class="dot"></span></a>
 </nav>
 
@@ -609,7 +607,7 @@
         <span class="plat">4</span>
       </a>
       <a class="board-row" href="#education">
-        <span class="dest">Education</span>
+        <span class="dest">Credentials</span>
         <span class="plat">5</span>
       </a>
       <a class="board-row" href="#contact">
@@ -678,6 +676,7 @@
       <h2>The route so far</h2></div>
     </div>
     <hr class="sec-divider">
+    <p class="sec-intro reveal" style="margin-bottom:36px">Work and study, one line. Some stops overlap — that's the point: the diploma was earned while holding down two jobs.</p>
     <div class="route">
       <div class="stop current reveal">
         <p class="stop-period">Sep 2025 — Present</p>
@@ -687,6 +686,15 @@
           <li>Oversee site-wide eCommerce performance analysis for LG.ca across all product divisions and digital initiatives.</li>
           <li>Use GA4 and Tableau dashboards to identify traffic, conversion, and engagement trends, translating insights into actionable recommendations.</li>
           <li>Manage enhancement requests through Jira, working with developers, headquarters, and cross-functional teams to drive delivery.</li>
+        </ul>
+      </div>
+      <div class="stop study reveal">
+        <p class="stop-period">2024 — 2025</p>
+        <h3>Postgraduate Diploma, Business Analysis<span class="study-tag">Education</span></h3>
+        <p class="org">George Brown Polytechnic · Toronto</p>
+        <ul>
+          <li>GPA 3.79/4.0 — Dean's Honour List in every term, earned while holding down the two roles below.</li>
+          <li>Capstone: redesigned the college's Work-Integrated Learning agreement process through stakeholder analysis, process mapping, and documentation.</li>
         </ul>
       </div>
       <div class="stop reveal">
@@ -708,6 +716,11 @@
           <li>Assessed urgency and dispatched emergency services; the frontline understanding of users still informs my analysis work.</li>
         </ul>
       </div>
+      <div class="stop interchange reveal">
+        <p class="stop-period">2022 · Interchange</p>
+        <h3>HKG → YYZ — changed lines</h3>
+        <p class="org">Moved from Hong Kong to Toronto, and restarted the route from the ground up.</p>
+      </div>
       <div class="stop reveal">
         <p class="stop-period">2020 — Mar 2022</p>
         <h3>Digital Services Specialist — MoneyBack App</h3>
@@ -716,6 +729,23 @@
           <li>Analyzed eCommerce performance for a loyalty app with 2M+ users, guiding product improvements in redemption, conversion, and engagement.</li>
           <li>Led QA planning and UAT execution; managed Agile timelines and documentation in Jira and Confluence.</li>
           <li>Started as a full-stack marketing intern, running GA4 and heatmap-driven UX optimization for a Shopify pilot eStore.</li>
+        </ul>
+      </div>
+      <div class="stop study reveal">
+        <p class="stop-period">2016 — 2020</p>
+        <h3>BBA, Information Management<span class="study-tag">Education</span></h3>
+        <p class="org">City University of Hong Kong</p>
+        <ul>
+          <li>Information systems, business strategy, and data-driven decision-making.</li>
+          <li>Exchange semester at the University of Lausanne (UNIL), Switzerland, 2019.</li>
+        </ul>
+      </div>
+      <div class="stop study reveal">
+        <p class="stop-period">2010 — 2016</p>
+        <h3>Secondary School<span class="study-tag">Education</span></h3>
+        <p class="org">St. Joseph's College · Central, Hong Kong</p>
+        <ul>
+          <li>The origin station — where the route began.</li>
         </ul>
       </div>
     </div>
@@ -812,28 +842,9 @@
     <div class="stn-head reveal">
       <span class="stn-num">5</span>
       <div><span class="stn-tag">Platform</span>
-      <h2>Education &amp; certifications</h2></div>
+      <h2>Certifications &amp; credentials</h2></div>
     </div>
     <hr class="sec-divider">
-    <div class="edu-list">
-      <div class="edu reveal">
-        <div class="year">2024–25</div>
-        <div>
-          <h3>Postgraduate Diploma, Business Analysis</h3>
-          <p class="school">George Brown Polytechnic · Toronto</p>
-          <p>GPA 3.79/4.0 — Dean's Honour List in every term. Capstone: redesigned the college's Work-Integrated Learning agreement process through stakeholder analysis, process mapping, and documentation.</p>
-        </div>
-      </div>
-      <div class="edu reveal">
-        <div class="year">2016–20</div>
-        <div>
-          <h3>BBA, Information Management</h3>
-          <p class="school">City University of Hong Kong</p>
-          <p>Information systems, business strategy, and data-driven decision-making. Exchange semester at the University of Lausanne (UNIL), Switzerland, 2019.</p>
-        </div>
-      </div>
-    </div>
-    <h2 class="small">Certifications</h2>
     <div class="cert-grid">
       <div class="cert reveal"><b>Google Analytics Certification</b><span>Google Digital Academy · 2025</span></div>
       <div class="cert reveal"><b>Microsoft Certified: Power Platform Fundamentals</b><span>Microsoft · 2024</span></div>
