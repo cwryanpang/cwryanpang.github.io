@@ -267,6 +267,25 @@
   .facts dt:first-child{margin-top:0}
   .facts dd{margin-top:2px;font-size:15px;color:var(--iron)}
 
+  /* lines served — grayscale brand strip; swap wordmarks for <img> logos later */
+  .lines-served{
+    margin-top:48px;padding-top:28px;border-top:1px solid var(--cloud);
+    display:flex;align-items:center;gap:16px 36px;flex-wrap:wrap;
+  }
+  .ls-label{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--storm);
+    flex-shrink:0;
+  }
+  .ls-items{display:flex;align-items:center;gap:14px 38px;flex-wrap:wrap}
+  .ls-item{
+    font-weight:700;font-size:19px;letter-spacing:-.01em;
+    color:var(--storm);transition:color .3s;
+  }
+  .ls-item:hover{color:var(--charcoal)}
+  .ls-item img{height:26px;display:block;filter:grayscale(1);opacity:.55;transition:opacity .3s,filter .3s}
+  .ls-item:hover img{filter:none;opacity:1}
+
   /* experience: route line (alignment: line center = dot center = 15px) */
   .route{position:relative;padding-left:48px}
   .route::before{
@@ -630,39 +649,56 @@
     <div class="about-grid">
       <div class="reveal">
         <p>
-          Born and raised in Hong Kong, I started my career in digital services
-          at A.S. Watson Group, analyzing performance for a loyalty app with
-          over two million users. In 2022 I moved to Canada and rebuilt from the
-          ground up — taking frontline customer-operations work while doing
-          business analysis for an eCommerce consultancy, then completing a
-          postgraduate diploma in Business Analysis at George Brown
-          (Dean's Honour List, every term).
+          Born and raised in Hong Kong, I discovered my passion for digital
+          experiences at A.S. Watson Group, managing performance and user
+          requirements for a loyalty app with over 2 million users. In 2022,
+          I moved to Canada and embraced the challenge of rebuilding my career
+          from scratch. I immersed myself in frontline operations at Lifeline
+          to truly understand local consumer behavior, while driving conversion
+          optimization and UI/UX enhancements on Shopify CMS for an eCommerce
+          site. Along the way, I backed my practical insights with academic
+          excellence, graduating on the Dean's Honour List from George Brown's
+          Business Analysis program.
         </p>
         <p>
-          Today I'm the eCommerce Business Analyst at LG Electronics Canada,
-          owning site-wide performance analysis for LG.ca. The winding route
-          taught me something dashboards can't: how real users talk, where
-          processes actually break, and why the "obvious" metric is often the
-          wrong one. It's also the direction I'm building toward — from
-          analysis into product management and ownership.
+          Today, as the eCommerce Business Analyst at LG Electronics Canada,
+          I own site-wide performance analysis for LG.ca, translating GA4 and
+          Tableau insights into feature tickets through Jira. This winding
+          journey taught me what dashboards alone can't: how real users behave,
+          where digital processes actually break, and how to align
+          cross-functional stakeholders from developers to marketing
+          executives. It is this precise intersection of data analytics, user
+          empathy, and Agile delivery that drives my evolution toward Product
+          Ownership.
         </p>
         <p>
-          Outside work, I'm usually studying German, or hunting for fossils on
-          Lake Ontario beaches.
+          Outside of work, I'm usually studying German — or out in the real
+          world, camping and hunting for fossils on Lake Ontario beaches.
         </p>
       </div>
       <dl class="facts reveal">
         <dt>Currently</dt>
         <dd>eCommerce Business Analyst, LG Electronics Canada</dd>
         <dt>Direction</dt>
-        <dd>Growing into Product Management / Product Ownership</dd>
+        <dd>Product Management / Product Ownership</dd>
         <dt>Based in</dt>
-        <dd>Greater Toronto Area</dd>
+        <dd>Toronto, Canada</dd>
         <dt>Focus</dt>
-        <dd>Roadmapping · Discovery · Data-driven decisions</dd>
-        <dt>Certified</dt>
-        <dd>PSM I · Google Analytics · Power Platform</dd>
+        <dd>Agile Delivery · Product Discovery · Data-Driven Strategy · UI/UX Design</dd>
+        <dt>Tools &amp; Certs</dt>
+        <dd>PSM I · GA4 &amp; Tableau · Jira &amp; Confluence · Figma</dd>
       </dl>
+    </div>
+    <div class="lines-served reveal" aria-label="Organizations">
+      <span class="ls-label">Lines served</span>
+      <div class="ls-items">
+        <span class="ls-item"><img src="logos/lg.svg" alt="LG Electronics" style="height:24px"></span>
+        <span class="ls-item"><img src="logos/as-watson.png" alt="A.S. Watson Group" style="height:26px"></span>
+        <span class="ls-item"><img src="logos/moneyback.png" alt="MoneyBack" style="height:30px"></span>
+        <span class="ls-item"><img src="logos/george-brown.svg" alt="George Brown Polytechnic" style="height:32px"></span>
+        <span class="ls-item"><img src="logos/cityu.svg" alt="City University of Hong Kong" style="height:32px"></span>
+        <span class="ls-item"><img src="logos/unil.png" alt="University of Lausanne" style="height:22px"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -676,7 +712,7 @@
       <h2>The route so far</h2></div>
     </div>
     <hr class="sec-divider">
-    <p class="sec-intro reveal" style="margin-bottom:36px">Work and study, one line. Some stops overlap — that's the point: the diploma was earned while holding down two jobs.</p>
+    <p class="sec-intro reveal" style="margin-bottom:36px">Work and study, all on one line — newest stop first.</p>
     <div class="route">
       <div class="stop current reveal">
         <p class="stop-period">Sep 2025 — Present</p>
@@ -685,13 +721,13 @@
         <ul>
           <li>Oversee site-wide eCommerce performance analysis for LG.ca across all product divisions and digital initiatives.</li>
           <li>Use GA4 and Tableau dashboards to identify traffic, conversion, and engagement trends, translating insights into actionable recommendations.</li>
-          <li>Manage enhancement requests through Jira, working with developers, headquarters, and cross-functional teams to drive delivery.</li>
+          <li>Initiate and manage enhancement requests and new feature tickets through Jira, working with developers, headquarters, and cross-functional teams to drive delivery.</li>
         </ul>
       </div>
       <div class="stop study reveal">
         <p class="stop-period">2024 — 2025</p>
-        <h3>Postgraduate Diploma, Business Analysis<span class="study-tag">Education</span></h3>
-        <p class="org">George Brown Polytechnic · Toronto</p>
+        <h3>George Brown Polytechnic<span class="study-tag">Education</span></h3>
+        <p class="org">Postgraduate Diploma, Business Analysis · Toronto</p>
         <ul>
           <li>GPA 3.79/4.0 — Dean's Honour List in every term, earned while holding down the two roles below.</li>
           <li>Capstone: redesigned the college's Work-Integrated Learning agreement process through stakeholder analysis, process mapping, and documentation.</li>
@@ -703,14 +739,14 @@
         <p class="org">MatMetrics · Toronto</p>
         <ul>
           <li>Tracked eCommerce KPIs — traffic, conversion, cart abandonment — in GA4 to support site performance optimization.</li>
-          <li>Customer behaviour analysis informed homepage and checkout redesigns that reduced bounce rate.</li>
+          <li>Drove homepage and checkout redesigns — grounded in customer behaviour analysis — that reduced bounce rate.</li>
           <li>Maintained BRDs, wireframes, and timelines in Confluence and Visio; led refinement meetings and documented acceptance criteria.</li>
         </ul>
       </div>
       <div class="stop reveal">
         <p class="stop-period">May 2022 — Jan 2024</p>
         <h3>Personal Response Assistant</h3>
-        <p class="org">Lifeline · Greater Toronto Area</p>
+        <p class="org">Lifeline · Toronto</p>
         <ul>
           <li>Handled 200+ daily calls on a personal emergency response service, where clarity and accuracy directly affect people's safety.</li>
           <li>Assessed urgency and dispatched emergency services; the frontline understanding of users still informs my analysis work.</li>
@@ -722,28 +758,44 @@
         <p class="org">Moved from Hong Kong to Toronto, and restarted the route from the ground up.</p>
       </div>
       <div class="stop reveal">
-        <p class="stop-period">2020 — Mar 2022</p>
+        <p class="stop-period">Jan 2021 — Mar 2022</p>
         <h3>Digital Services Specialist — MoneyBack App</h3>
         <p class="org">A.S. Watson Group · Hong Kong</p>
         <ul>
-          <li>Analyzed eCommerce performance for a loyalty app with 2M+ users, guiding product improvements in redemption, conversion, and engagement.</li>
+          <li>Analyzed eCommerce performance for the MoneyBack loyalty app (2M+ users), guiding product improvements in redemption, conversion, and engagement.</li>
+          <li>Managed the product backlog and user requirements for app enhancements; delivered KPI reports to senior stakeholders to support roadmap decisions.</li>
           <li>Led QA planning and UAT execution; managed Agile timelines and documentation in Jira and Confluence.</li>
-          <li>Started as a full-stack marketing intern, running GA4 and heatmap-driven UX optimization for a Shopify pilot eStore.</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <p class="stop-period">Aug 2020 — Dec 2020</p>
+        <h3>Full Stack Marketing Intern</h3>
+        <p class="org">A.S. Watson Group · Hong Kong</p>
+        <ul>
+          <li>Ran a UX optimization project for Fillfull.com.hk, an internal Shopify pilot eStore, using GA4 and heatmap analytics to lift engagement and conversion.</li>
+          <li>Analyzed marketing and sales data for actionable insights; collaborated cross-functionally on digital campaigns and creative assets.</li>
+        </ul>
+      </div>
+      <div class="stop study reveal">
+        <p class="stop-period">2019</p>
+        <h3>University of Lausanne (UNIL)<span class="study-tag">Exchange</span></h3>
+        <p class="org">Exchange semester · Lausanne</p>
+        <ul>
+          <li>A semester riding the actual Swiss railways — the design language this site borrows.</li>
         </ul>
       </div>
       <div class="stop study reveal">
         <p class="stop-period">2016 — 2020</p>
-        <h3>BBA, Information Management<span class="study-tag">Education</span></h3>
-        <p class="org">City University of Hong Kong</p>
+        <h3>City University of Hong Kong<span class="study-tag">Education</span></h3>
+        <p class="org">Bachelor of Business Administration, Information Management · Hong Kong</p>
         <ul>
           <li>Information systems, business strategy, and data-driven decision-making.</li>
-          <li>Exchange semester at the University of Lausanne (UNIL), Switzerland, 2019.</li>
         </ul>
       </div>
       <div class="stop study reveal">
         <p class="stop-period">2010 — 2016</p>
-        <h3>Secondary School<span class="study-tag">Education</span></h3>
-        <p class="org">St. Joseph's College · Central, Hong Kong</p>
+        <h3>St. Joseph's College<span class="study-tag">Education</span></h3>
+        <p class="org">Secondary school · Hong Kong</p>
         <ul>
           <li>The origin station — where the route began.</li>
         </ul>
