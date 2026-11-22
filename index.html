@@ -121,7 +121,7 @@
   .resume-btn{
     display:inline-flex;align-items:center;gap:7px;
     font-size:13.5px;font-weight:600;color:#fff;background:var(--red);
-    padding:8px 16px;border-radius:999px;flex-shrink:0;
+    padding:8px 16px;border-radius:999px;flex-shrink:0;white-space:nowrap;
     transition:background .3s;
   }
   .resume-btn:hover{background:var(--red-125)}
@@ -132,6 +132,16 @@
     font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--granite);
     letter-spacing:.06em;font-variant-numeric:tabular-nums;
   }
+  /* mid widths: full nav + digital clock + resume button don't fit — drop the digital readout and tighten spacing */
+  @media(max-width:1020px){
+    .topbar-inner{gap:14px}
+    .top-nav{gap:16px}
+    .topbar-actions{gap:12px}
+    .clock-digital{display:none}
+    .resume-btn .pdf-tag{display:none}
+  }
+  /* small phones: the centred clock would collide with the "Request résumé" button */
+  @media(max-width:420px){.topbar .clock{display:none}}
   @media(max-width:760px){
     .top-nav{display:none}
     .topbar-inner{grid-template-columns:auto auto;justify-content:space-between;position:relative}
@@ -294,6 +304,7 @@
   /* about right column: full-width photo card above the facts card */
   .about-side{display:flex;flex-direction:column;gap:20px}
   .headshot{
+    width:100%;max-width:220px;align-self:center;
     margin:0;background:var(--white);border-radius:var(--radius);
     box-shadow:var(--shadow-3);overflow:hidden;
   }
@@ -301,22 +312,22 @@
 
   /* lines served — grayscale brand strip; swap wordmarks for <img> logos later */
   .lines-served{
+    display:grid;grid-template-columns:auto 1fr;gap:28px 40px;
     padding:24px 28px;
     background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-3);
   }
   .ls-label{
-    display:block;margin-bottom:16px;
+    display:block;margin-bottom:14px;
     font-family:"IBM Plex Mono",monospace;font-size:11.5px;
     letter-spacing:.14em;text-transform:uppercase;color:var(--storm);
   }
-  .ls-items{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;justify-content:space-between}
-  .ls-item{
-    font-weight:700;font-size:19px;letter-spacing:-.01em;
-    color:var(--storm);transition:color .3s;
+  .ls-items{display:flex;align-items:center;gap:16px 28px;flex-wrap:wrap}
+  .ls-item img{
+    display:block;height:28px;width:auto;max-width:150px;object-fit:contain;
+    filter:grayscale(1);opacity:.7;transition:opacity .3s,filter .3s;
   }
-  .ls-item:hover{color:var(--charcoal)}
-  .ls-item img{height:26px;display:block;filter:grayscale(1);opacity:.55;transition:opacity .3s,filter .3s}
   .ls-item:hover img{filter:none;opacity:1}
+  @media(max-width:640px){.lines-served{grid-template-columns:1fr;gap:22px}}
 
   /* experience: route line (alignment: line center = dot center = 15px) */
   .route{position:relative;padding-left:48px}
@@ -395,6 +406,7 @@
     font-size:13px;color:var(--granite);font-weight:600;margin-bottom:12px;
   }
   .project-card .proj-desc{color:var(--granite);font-size:14.5px;margin-bottom:16px}
+  .project-card .tags{display:flex;flex-wrap:wrap;gap:8px}
   .project-card .proj-link{font-size:13.5px;font-weight:600;color:var(--red)}
   .placeholder-badge{
     display:inline-block;background:var(--milk);
@@ -565,13 +577,13 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="topbar-actions">
-      <a class="resume-btn" href="resume.pdf" download>
+      <a class="resume-btn" href="mailto:cw.ryanpang@gmail.com?subject=R%C3%A9sum%C3%A9%20request" title="Email me to request my résumé">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M6 2.5h8.5L19 7v14.5H6V2.5Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
           <path d="M14 2.5V7h5" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
           <path d="M9 12h6M9 15h6M9 18h3.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
-        <span>Résumé<span class="pdf-tag"> (PDF)</span></span>
+        <span>Request résumé</span>
       </a>
       <div class="clock" aria-hidden="true">
         <svg id="stnClock" width="34" height="34" viewBox="0 0 100 100">
@@ -612,7 +624,7 @@
       <div class="sign-meta">
         <span>Roadmapping · Prioritization · Discovery</span>
         <span>eCommerce analytics · GA4 · Tableau</span>
-        <span>Professional Scrum Master I</span>
+        <span>PSPO I · PSM I (Scrum.org)</span>
       </div>
     </div>
 
@@ -634,8 +646,8 @@
         <div class="impact-label">GPA — Dean's Honour List, every term</div>
       </div>
       <div class="impact-stat">
-        <div class="impact-num">3</div>
-        <div class="impact-label">Professional certifications — PSM I · GA · Power Platform</div>
+        <div class="impact-num">4</div>
+        <div class="impact-label">Professional certifications — PSPO I · PSM I · GA · Power Platform</div>
       </div>
     </div>
 
@@ -709,15 +721,21 @@
           world, camping and hunting for fossils on Lake Ontario beaches.
         </p>
       </div>
-      <div class="lines-served reveal" aria-label="Organizations">
-        <span class="ls-label">Lines served</span>
-        <div class="ls-items">
-          <span class="ls-item"><img src="logos/lg.svg" alt="LG Electronics" style="height:24px"></span>
-          <span class="ls-item"><img src="logos/as-watson.png" alt="A.S. Watson Group" style="height:26px"></span>
-          <span class="ls-item"><img src="logos/moneyback.png" alt="MoneyBack" style="height:30px"></span>
-          <span class="ls-item"><img src="logos/george-brown.svg" alt="George Brown Polytechnic" style="height:32px"></span>
-          <span class="ls-item"><img src="logos/cityu.svg" alt="City University of Hong Kong" style="height:32px"></span>
-          <span class="ls-item"><img src="logos/unil.png" alt="University of Lausanne" style="height:22px"></span>
+      <div class="lines-served reveal" aria-label="Where I've worked and studied">
+        <div class="ls-group">
+          <span class="ls-label">Worked at</span>
+          <div class="ls-items">
+            <span class="ls-item"><img src="logos/lg.svg" alt="LG Electronics" style="height:26px"></span>
+            <span class="ls-item"><img src="logos/as-watson.png" alt="A.S. Watson Group" style="height:28px"></span>
+          </div>
+        </div>
+        <div class="ls-group">
+          <span class="ls-label">Studied at</span>
+          <div class="ls-items">
+            <span class="ls-item"><img src="logos/george-brown.svg" style="height:40px" alt="George Brown Polytechnic"></span>
+            <span class="ls-item"><img src="logos/cityu.svg" style="height:40px" alt="City University of Hong Kong"></span>
+            <span class="ls-item"><img src="logos/unil.png" style="height:20px" alt="University of Lausanne"></span>
+          </div>
         </div>
       </div>
       </div>
@@ -736,7 +754,7 @@
           <dt>Focus</dt>
           <dd>Agile Delivery · Product Discovery · Data-Driven Strategy · UI/UX Design</dd>
           <dt>Tools &amp; Certs</dt>
-          <dd>PSM I · GA4 &amp; Tableau · Jira &amp; Confluence · Figma</dd>
+          <dd>PSPO I · PSM I · GA4 &amp; Tableau · Jira &amp; Confluence · Figma</dd>
         </dl>
         </div>
       </div>
@@ -889,7 +907,7 @@
       <div class="skill-card reveal">
         <h3>Ways of Working</h3>
         <div class="tags">
-          <span class="tag">Agile · Scrum (PSM I)</span>
+          <span class="tag">Agile · Scrum (PSPO I · PSM I)</span>
           <span class="tag">Jira</span>
           <span class="tag">Shopify CMS</span>
           <span class="tag">Cross-team communication</span>
@@ -908,22 +926,43 @@
       <h2>Projects &amp; work</h2></div>
     </div>
     <hr class="sec-divider">
-    <p class="sec-intro reveal">A couple of slots for real work to show up — swap these placeholders for actual case studies when ready.</p>
+    <p class="sec-intro reveal">Selected work, told as problem → approach → outcome — mostly analytics work in GA4, from finding where users drop off to proving what changed after release. Some results are described qualitatively for confidentiality; I'm happy to walk through the details in conversation.</p>
     <div class="projects-grid">
       <div class="project-card reveal">
-        <span class="placeholder-badge">Add project</span>
-        <h3>Project title</h3>
-        <p class="proj-role">Your role · Company/Team · Year</p>
-        <p class="proj-desc">One or two sentences on the problem, what you did, and the measurable result (e.g. "+12% conversion", "cut cycle time by 30%").</p>
-        <!-- Point this at a case-study PDF (e.g. "case-study-1.pdf") or a separate detail page once written -->
-        <a class="proj-link" href="case-study-1.pdf">View case study →</a>
+        <h3>Finding the homepage drop-off in GA4</h3>
+        <p class="proj-role">Funnel analysis · Redesign · 2025–26</p>
+        <p class="proj-desc">GA4 funnel data showed too few visitors moving from the homepage to category pages. I traced the drop-off to a crowded, promotion-led layout, helped redesign the page around clear paths into categories, and measured the impact after launch with GA4 and heatmaps — conversion improved after release.</p>
+        <div class="tags"><span class="tag">GA4 funnels</span><span class="tag">Heatmaps</span><span class="tag">Pre/post measurement</span></div>
       </div>
       <div class="project-card reveal">
-        <span class="placeholder-badge">Add project</span>
-        <h3>Project title</h3>
-        <p class="proj-role">Your role · Company/Team · Year</p>
-        <p class="proj-desc">One or two sentences on the problem, what you did, and the measurable result.</p>
-        <a class="proj-link" href="case-study-2.pdf">View case study →</a>
+        <h3>Measuring every release, not just shipping it</h3>
+        <p class="proj-role">KPI definition · Post-release analysis · 2025–26</p>
+        <p class="proj-desc">I define the KPIs for each enhancement before it ships, then measure the result after release with GA4, heatmaps and customer feedback. Applied to a mobile experience program, this approach led to a sharp drop in reported mobile issues.</p>
+        <div class="tags"><span class="tag">KPI definition</span><span class="tag">GA4 reporting</span><span class="tag">Customer feedback</span></div>
+      </div>
+      <div class="project-card reveal">
+        <h3>KPI tracking and A/B tests for a homepage &amp; checkout redesign</h3>
+        <p class="proj-role">GA4 KPI tracking · A/B testing · 2023–24</p>
+        <p class="proj-desc">I tracked traffic, conversion rate and cart abandonment in GA4, ran A/B tests and analyzed customer behaviour to decide what the homepage and checkout redesigns should change. The redesigns reduced bounce rate.</p>
+        <div class="tags"><span class="tag">GA4</span><span class="tag">A/B testing</span><span class="tag">Behaviour analysis</span></div>
+      </div>
+      <div class="project-card reveal">
+        <h3>Heatmaps that moved conversion 15%</h3>
+        <p class="proj-role">GA4 &amp; heatmap analysis · 2020</p>
+        <p class="proj-desc">GA4 and heatmaps showed visitors leaving before they ever reached the promotions. I revamped the homepage and purchase journey and tested banner positions and button colours on key pages; conversion rate improved 15%.</p>
+        <div class="tags"><span class="tag">GA4</span><span class="tag">Heatmaps</span><span class="tag">UX testing</span></div>
+      </div>
+      <div class="project-card reveal">
+        <h3>Designing a process that didn't exist</h3>
+        <p class="proj-role">Process design · Stakeholder interviews · 2025–26</p>
+        <p class="proj-desc">Creating a new category page had no defined workflow. I interviewed stakeholders, mapped the current state, and designed a process that sets out which team supplies each input. I now own the process end to end.</p>
+        <div class="tags"><span class="tag">Stakeholder interviews</span><span class="tag">Process mapping</span><span class="tag">Process ownership</span></div>
+      </div>
+      <div class="project-card reveal">
+        <h3>Single customer view for 2M+ loyalty members</h3>
+        <p class="proj-role">Data integration · Loyalty program · 2021–22</p>
+        <p class="proj-desc">Member data was split across records, and points only updated after an overnight batch. I defined matching and linkage rules to unify 2M+ member records into a single customer view, and helped deliver near real-time points by replicating transactions from the AS400 system to the loyalty platform.</p>
+        <div class="tags"><span class="tag">BRDs</span><span class="tag">Data matching rules</span><span class="tag">QA &amp; UAT</span></div>
       </div>
     </div>
   </div>
@@ -939,7 +978,8 @@
     </div>
     <hr class="sec-divider">
     <div class="cert-grid">
-      <div class="cert reveal"><b>Google Analytics Certification</b><span>Google Digital Academy · 2025</span></div>
+      <div class="cert reveal"><b>Professional Scrum Product Owner I (PSPO I)</b><span>Scrum.org · 2026</span></div>
+      <div class="cert reveal"><b>Google Analytics Certification</b><span>Google Skillshop · 2025</span></div>
       <div class="cert reveal"><b>Microsoft Certified: Power Platform Fundamentals</b><span>Microsoft · 2024</span></div>
       <div class="cert reveal"><b>Professional Scrum Master I (PSM I)</b><span>Scrum.org · 2022</span></div>
     </div>
@@ -953,6 +993,7 @@
       <div class="lang reveal"><b>English</b><span>Fluent</span></div>
       <div class="lang reveal"><b>Mandarin</b><span>Fluent</span></div>
       <div class="lang reveal"><b>German</b><span>Elementary (A2)</span></div>
+      <div class="lang reveal"><b>French</b><span>Elementary</span></div>
     </div>
   </div>
 </section>
@@ -985,13 +1026,13 @@
           </svg>
           <span>LinkedIn</span>
         </a>
-        <a class="btn btn-secondary btn-equal" href="resume.pdf" download>
+        <a class="btn btn-secondary btn-equal" href="mailto:cw.ryanpang@gmail.com?subject=R%C3%A9sum%C3%A9%20request">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M6 2.5h8.5L19 7v14.5H6V2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
             <path d="M14 2.5V7h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
             <path d="M9 12h6M9 15h6M9 18h3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <span>Résumé (PDF)</span>
+          <span>Request résumé</span>
         </a>
       </div>
 
